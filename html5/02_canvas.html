@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Graficos en 2D - (canvas)</title>
+</head>
+<body>
+
+<h1>Graficos en 2D - (canvas)</h1>
+<hr>
+<h3>Cuadrado</h3>
+<canvas id="cuadrado"></canvas>
+<hr>
+<h3>Circulo</h3>
+<canvas id="circulo"></canvas>
+<hr>
+<h3>Triangulo</h3>
+<canvas id="triangulo"></canvas>
+<hr>
+<h3>Texto</h3>
+<canvas id="texto"></canvas>
+<hr>
+<h3>Estrella</h3>
+<canvas id="estrella"></canvas>
+<script>
+	var cuadrado = document.getElementById('cuadrado');
+	var cnvs= cuadrado.getContext('2d');
+	cnvs.fillStyle= '#751e53';
+	cnvs.fillRect(0,0,100,100);
+
+	var circulo = document.getElementById('circulo');
+	var ctx= circulo.getContext('2d');
+	ctx.beginPath();
+	ctx.fillStyle = '#751e53';
+	ctx.arc(70, 70, 40, 0, 4 * Math.PI, true);
+	ctx.fill();
+
+	var triangulo = document.getElementById('triangulo');
+	var contenido= triangulo.getContext('2d');
+	contenido.beginPath();
+	contenido.fillStyle = '#751e53';
+	contenido.moveTo(10, 110);
+	contenido.lineTo (110, 10);
+	contenido.lineTo (210, 110);
+	contenido.fill();
+
+	var texto = document.getElementById('texto');
+	var ctx = texto.getContext('2d');
+	ctx.fillStyle='#751e53';
+	ctx.fillRect(10,10,200,200);
+	ctx.fillStyle='#ffff33';
+	ctx.fillText("Hola Mundo",50,50);
+
+
+	var estrella = document.getElementById('estrella');
+	var ctx = estrella.getContext('2d');
+	ctx.beginPath();
+    ctx.moveTo((100/PP)+dif,(20/PP)+dif);//1
+    ctx.lineTo((118/PP)+dif,(73/PP)+dif);//2
+    ctx.lineTo((175/PP)+dif,73/PP+dif);//3
+    ctx.lineTo((132/PP)+dif,110/PP+dif);//4
+    ctx.lineTo((149/PP)+dif,164/PP+dif);//5
+    ctx.lineTo((100/PP)+dif,132/PP+dif);//6
+    ctx.lineTo((52/PP)+dif,164/PP+dif);//7
+    ctx.lineTo((69/PP)+dif,110/PP+dif);//8
+    ctx.lineTo((25/PP)+dif,73/PP+dif);//9
+    ctx.lineTo((81/PP)+dif,73/PP+dif);//10
+    ctx.fill();
+    
+
+
+</script>
+	
+</body>
+</html>
