@@ -53,20 +53,22 @@
 
 
 	var estrella = document.getElementById('estrella');
-	var ctx = estrella.getContext('2d');
-	ctx.beginPath();
-    ctx.moveTo((100/PP)+dif,(20/PP)+dif);//1
-    ctx.lineTo((118/PP)+dif,(73/PP)+dif);//2
-    ctx.lineTo((175/PP)+dif,73/PP+dif);//3
-    ctx.lineTo((132/PP)+dif,110/PP+dif);//4
-    ctx.lineTo((149/PP)+dif,164/PP+dif);//5
-    ctx.lineTo((100/PP)+dif,132/PP+dif);//6
-    ctx.lineTo((52/PP)+dif,164/PP+dif);//7
-    ctx.lineTo((69/PP)+dif,110/PP+dif);//8
-    ctx.lineTo((25/PP)+dif,73/PP+dif);//9
-    ctx.lineTo((81/PP)+dif,73/PP+dif);//10
-    ctx.fill();
-    
+	var cnvs5 = estrella.getContext('2d');
+    cnvs5.fillStyle = '#751e53';
+		cnvs5.translate(50, 100);
+		cnvs5.rotate((Math.PI * 1 / 10));
+		for (var i = 5; i--;) {
+		    cnvs5.lineTo(0, 50);
+		    cnvs5.translate(0, 50);
+		    cnvs5.rotate((Math.PI * 2 / 10));
+		    cnvs5.lineTo(0, -50);
+		    cnvs5.translate(0, -50);
+		    cnvs5.rotate(-(Math.PI * 6 / 10));
+		}
+		cnvs5.lineTo(0, 50);
+		cnvs5.closePath();
+		cnvs5.fill();
+		cnvs5.stroke();
 
 
 </script>
